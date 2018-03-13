@@ -1,0 +1,8 @@
+D:\Documents\Visual Studio 2017\Projects\Client\Client\bin\Debug\Client.exe.config
+D:\Documents\Visual Studio 2017\Projects\Client\Client\bin\Debug\Client.exe
+D:\Documents\Visual Studio 2017\Projects\Client\Client\bin\Debug\Client.pdb
+D:\Documents\Visual Studio 2017\Projects\Client\Client\obj\Debug\Client.exe
+D:\Documents\Visual Studio 2017\Projects\Client\Client\obj\Debug\Client.pdb
+d:\documents\visual studio 2017\Projects\Client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+d:\documents\visual studio 2017\Projects\Client\Client\obj\Debug\Client.Form1.resources
+d:\documents\visual studio 2017\Projects\Client\Client\obj\Debug\Client.csproj.GenerateResource.Cache
