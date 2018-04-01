@@ -1,8 +1,8 @@
-d:\documents\visual studio 2017\Projects\Host\Host\bin\Debug\Host.exe.config
-d:\documents\visual studio 2017\Projects\Host\Host\bin\Debug\Host.exe
 d:\documents\visual studio 2017\Projects\Host\Host\bin\Debug\Host.pdb
 d:\documents\visual studio 2017\Projects\Host\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
-d:\documents\visual studio 2017\Projects\Host\Host\obj\Debug\Host.exe
 d:\documents\visual studio 2017\Projects\Host\Host\obj\Debug\Host.pdb
 d:\documents\visual studio 2017\Projects\Host\Host\bin\Debug\Newtonsoft.Json.dll
 d:\documents\visual studio 2017\Projects\Host\Host\bin\Debug\Newtonsoft.Json.xml
+d:\documents\visual studio 2017\Projects\Host\Host\bin\Debug\Host.exe.config
+d:\documents\visual studio 2017\Projects\Host\Host\bin\Debug\Host.exe
+d:\documents\visual studio 2017\Projects\Host\Host\obj\Debug\Host.exe

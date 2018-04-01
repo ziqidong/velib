@@ -1,0 +1,9 @@
+d:\documents\visual studio 2017\Projects\MonitoringClient\MonitoringClient\bin\Debug\MonitoringClient.exe.config
+d:\documents\visual studio 2017\Projects\MonitoringClient\MonitoringClient\bin\Debug\MonitoringClient.exe
+d:\documents\visual studio 2017\Projects\MonitoringClient\MonitoringClient\bin\Debug\MonitoringClient.pdb
+d:\documents\visual studio 2017\Projects\MonitoringClient\MonitoringClient\obj\Debug\MonitoringClient.csprojResolveAssemblyReference.cache
+d:\documents\visual studio 2017\Projects\MonitoringClient\MonitoringClient\obj\Debug\MonitoringClient.Form1.resources
+d:\documents\visual studio 2017\Projects\MonitoringClient\MonitoringClient\obj\Debug\MonitoringClient.Properties.Resources.resources
+d:\documents\visual studio 2017\Projects\MonitoringClient\MonitoringClient\obj\Debug\MonitoringClient.csproj.GenerateResource.Cache
+d:\documents\visual studio 2017\Projects\MonitoringClient\MonitoringClient\obj\Debug\MonitoringClient.exe
+d:\documents\visual studio 2017\Projects\MonitoringClient\MonitoringClient\obj\Debug\MonitoringClient.pdb

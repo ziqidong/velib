@@ -10,6 +10,7 @@ using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Windows.Forms;
 
 namespace Host
 {
@@ -17,13 +18,15 @@ namespace Host
     {
         static void Main(string[] args)
         {
-            using (ServiceHost host = new ServiceHost(typeof(Host.Service1)))
-            {
+            //using (ServiceHost host = new ServiceHost(typeof(Host.Service1)))
+            //{
+                ServiceHost host = new ServiceHost(typeof(Host.Service1));
                 host.Open();
-                Console.WriteLine("服务已经启动......");
+                Console.WriteLine("server start......");
+
                 Console.ReadLine();
                 host.Close();
-            }
+            //}
         }
     }
 }
