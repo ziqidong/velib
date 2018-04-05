@@ -1,0 +1,5 @@
+d:\documents\visual studio 2017\Projects\Eclient\Eclient\bin\Debug\Eclient.exe.config
+d:\documents\visual studio 2017\Projects\Eclient\Eclient\bin\Debug\Eclient.exe
+d:\documents\visual studio 2017\Projects\Eclient\Eclient\bin\Debug\Eclient.pdb
+d:\documents\visual studio 2017\Projects\Eclient\Eclient\obj\Debug\Eclient.exe
+d:\documents\visual studio 2017\Projects\Eclient\Eclient\obj\Debug\Eclient.pdb
