@@ -13,12 +13,18 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using System.ServiceModel;
 
 namespace Host
 {
     // 注意: 使用“重构”菜单上的“重命名”命令，可以同时更改代码和配置文件中的类名“Service1”。
-    public class Service1 : IService1, wcf
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
+    public class Service1 : IService1,wcf, ICalcServiiiiiiiiiiice
     {
+        static Action<string> m_Event1 = delegate { };
+        static Action m_Event2 = delegate { };
+
+
         System.Web.Caching.Cache objCache = HttpRuntime.Cache;
 
         System.Web.Caching.Cache monitoring = HttpRuntime.Cache;
@@ -200,7 +206,8 @@ namespace Host
                        String name = (String)jo["name"];
                        stations += name + "\n";
                    }
-                   lastcity = ((City)objCache[id]).city;
+                   objCache["lastcity"] = ((City)objCache[id]).city;
+                   //lastcity = ((City)objCache[id]).city;
                    return stations;
                }
                WebRequest request = WebRequest.Create("https://api.jcdecaux.com/vls/v1/stations?contract=" + id + "&apiKey=a128869411f54eff41401cba4a717e9d42f9595a");
@@ -223,7 +230,8 @@ namespace Host
                //citylist.Add(new City(id, ja));
                objCache.Insert(id, new City(id, ja));
 
-               lastcity = ja;
+               objCache.Insert("lastcity",ja);
+               //lastcity = ja;
 
                foreach (JObject jo in ja)
                {
@@ -246,29 +254,34 @@ namespace Host
             return await Task.Run<string>(() =>
          {
              string station = "Station not found";
-             foreach (JObject jo in lastcity)
-             {
-                 String add = (String)jo["name"];
-                 if (add.Equals(id))
+             if (objCache["lastcity"] != null) {
+                 foreach (JObject jo in (JArray)objCache["lastcity"])
                  {
-                     station = "";
-                     station += "Number : " + (String)jo["number"] + "\n";
-                     station += "Name : " + (String)jo["name"] + "\n";
-                     station += "Address : " + (String)jo["address"] + "\n";
-                     station += "Lat : " + (String)jo["position"]["lat"] + "\n";
-                     station += "Lng : " + (String)jo["position"]["lng"] + "\n";
-                     station += "Banking" + (String)jo["banking"] + "\n";
-                     station += "Bonus : " + (String)jo["bonus"] + "\n";
-                     station += "Status :" + (String)jo["status"] + "\n";
-                     station += "Contract_name : " + (String)jo["contract_name"] + "\n";
-                     station += "Bike_stands : " + (String)jo["bike_stands"] + "\n";
-                     station += "Available_bike_stands : " + (String)jo["available_bike_stands"] + "\n";
-                     station += "Available_bikes : " + (String)jo["available_bikes"] + "\n";
-                     station += "Last_update : " + (String)jo["last_update"] + "\n";
+                     String add = (String)jo["name"];
+                     if (add.Equals(id))
+                     {
+                         station = "";
+                         station += "Number : " + (String)jo["number"] + "\n";
+                         station += "Name : " + (String)jo["name"] + "\n";
+                         station += "Address : " + (String)jo["address"] + "\n";
+                         station += "Lat : " + (String)jo["position"]["lat"] + "\n";
+                         station += "Lng : " + (String)jo["position"]["lng"] + "\n";
+                         station += "Banking" + (String)jo["banking"] + "\n";
+                         station += "Bonus : " + (String)jo["bonus"] + "\n";
+                         station += "Status :" + (String)jo["status"] + "\n";
+                         station += "Contract_name : " + (String)jo["contract_name"] + "\n";
+                         station += "Bike_stands : " + (String)jo["bike_stands"] + "\n";
+                         station += "Available_bike_stands : " + (String)jo["available_bike_stands"] + "\n";
+                         station += "Available_bikes : " + (String)jo["available_bikes"] + "\n";
+                         station += "Last_update : " + (String)jo["last_update"] + "\n";
+                     }
                  }
+                 return station;
              }
-             Console.WriteLine(station);
-             return station;
+             else {
+                 return station;
+             }
+             
          });
         }
         //[WebInvoke(Method = "GET",
@@ -282,6 +295,41 @@ namespace Host
         //        name = "wocao"
         //    };
         //}
+        public void SubscribeSentEvent()
+        {
+            ICalcServiceEvents subscriber =
+            OperationContext.Current.GetCallbackChannel<ICalcServiceEvents>();
+            m_Event1 += subscriber.Sent;
+        }
+
+        public void SubscribeSendFinishedEvent()
+        {
+            ICalcServiceEvents subscriber =
+            OperationContext.Current.GetCallbackChannel<ICalcServiceEvents>();
+            m_Event2 += subscriber.SentFinished;
+        }
+
+        public void SendInfo(string name)
+        {
+            string stations = "";
+            while (true)
+            {
+                Thread.Sleep(5000);
+                if (objCache[name] != null)
+                {
+                    foreach (JObject jo in ((City)objCache[name]).city)
+                    {
+                        String pp = jo.ToString();
+                        String namee = (String)jo["name"];
+                        stations += namee + "\n";
+                    }
+                }
+                else { stations = "no information of this city"; }
+                m_Event1(stations);
+                m_Event2();
+                stations = "";
+            }
+        }
     }
 
     public class City

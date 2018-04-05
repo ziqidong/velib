@@ -202,4 +202,90 @@ namespace MonitoringClient.ServiceReference1 {
             return base.Channel.heheAsync();
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ICalcServiiiiiiiiiiice", CallbackContract=typeof(MonitoringClient.ServiceReference1.ICalcServiiiiiiiiiiiceCallback))]
+    public interface ICalcServiiiiiiiiiiice {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalcServiiiiiiiiiiice/SendInfo", ReplyAction="http://tempuri.org/ICalcServiiiiiiiiiiice/SendInfoResponse")]
+        void SendInfo(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalcServiiiiiiiiiiice/SendInfo", ReplyAction="http://tempuri.org/ICalcServiiiiiiiiiiice/SendInfoResponse")]
+        System.Threading.Tasks.Task SendInfoAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalcServiiiiiiiiiiice/SubscribeSentEvent", ReplyAction="http://tempuri.org/ICalcServiiiiiiiiiiice/SubscribeSentEventResponse")]
+        void SubscribeSentEvent();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalcServiiiiiiiiiiice/SubscribeSentEvent", ReplyAction="http://tempuri.org/ICalcServiiiiiiiiiiice/SubscribeSentEventResponse")]
+        System.Threading.Tasks.Task SubscribeSentEventAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalcServiiiiiiiiiiice/SubscribeSendFinishedEvent", ReplyAction="http://tempuri.org/ICalcServiiiiiiiiiiice/SubscribeSendFinishedEventResponse")]
+        void SubscribeSendFinishedEvent();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalcServiiiiiiiiiiice/SubscribeSendFinishedEvent", ReplyAction="http://tempuri.org/ICalcServiiiiiiiiiiice/SubscribeSendFinishedEventResponse")]
+        System.Threading.Tasks.Task SubscribeSendFinishedEventAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ICalcServiiiiiiiiiiiceCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ICalcServiiiiiiiiiiice/Sent")]
+        void Sent(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ICalcServiiiiiiiiiiice/SentFinished")]
+        void SentFinished();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ICalcServiiiiiiiiiiiceChannel : MonitoringClient.ServiceReference1.ICalcServiiiiiiiiiiice, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CalcServiiiiiiiiiiiceClient : System.ServiceModel.DuplexClientBase<MonitoringClient.ServiceReference1.ICalcServiiiiiiiiiiice>, MonitoringClient.ServiceReference1.ICalcServiiiiiiiiiiice {
+        
+        public CalcServiiiiiiiiiiiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public CalcServiiiiiiiiiiiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public CalcServiiiiiiiiiiiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CalcServiiiiiiiiiiiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CalcServiiiiiiiiiiiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public void SendInfo(string name) {
+            base.Channel.SendInfo(name);
+        }
+        
+        public System.Threading.Tasks.Task SendInfoAsync(string name) {
+            return base.Channel.SendInfoAsync(name);
+        }
+        
+        public void SubscribeSentEvent() {
+            base.Channel.SubscribeSentEvent();
+        }
+        
+        public System.Threading.Tasks.Task SubscribeSentEventAsync() {
+            return base.Channel.SubscribeSentEventAsync();
+        }
+        
+        public void SubscribeSendFinishedEvent() {
+            base.Channel.SubscribeSendFinishedEvent();
+        }
+        
+        public System.Threading.Tasks.Task SubscribeSendFinishedEventAsync() {
+            return base.Channel.SubscribeSendFinishedEventAsync();
+        }
+    }
 }

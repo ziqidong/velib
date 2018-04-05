@@ -23,7 +23,6 @@ namespace Host
                 ServiceHost host = new ServiceHost(typeof(Host.Service1));
                 host.Open();
                 Console.WriteLine("server start......");
-
                 Console.ReadLine();
                 host.Close();
             //}

@@ -47,5 +47,27 @@ namespace Host
         string hehe();
     }
 
+    [ServiceContract(CallbackContract = typeof(ICalcServiceEvents))]
+    public interface ICalcServiiiiiiiiiiice
+    {
+        [OperationContract]
+        void SendInfo(string name);
+
+        [OperationContract]
+        void SubscribeSentEvent();
+
+        [OperationContract]
+        void SubscribeSendFinishedEvent();
+    }
+
+    public interface ICalcServiceEvents
+    {
+        [OperationContract(IsOneWay = true)]
+        void Sent(string name);
+
+        [OperationContract(IsOneWay = true)]
+        void SentFinished();
+    }
+
 
 }
