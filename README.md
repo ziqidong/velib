@@ -35,11 +35,19 @@ if you enter a wrong city name, it will notice you that the name is not correct.
 
 2. A cache in IWS which will reduce the communication time between IWS and client-side
 
+![image](https://github.com/ziqidong/velib/raw/master/Velib/images/cache.png)
 
 It contains a ObjectCache which cations all informations of the citys queried.
-It contains a JArray which contains the information of current city.
+for example, it can look up information of stations.
+
+![image](https://github.com/ziqidong/velib/raw/master/Velib/images/cache2.png)
   
 3. Asynchronous methods in both IWS and client-side, IWS use asynchronous methods to reduce the comminication time between IWS and https://api.jcdecaux.com/, client-side use asynchronous methods to reduce the time between client-side and IWS.
+
+![image](https://github.com/ziqidong/velib/raw/master/Velib/images/async1.png)
+![image](https://github.com/ziqidong/velib/raw/master/Velib/images/async2.png)
+![image](https://github.com/ziqidong/velib/raw/master/Velib/images/async3.png)
+
 
 4. A monitor with graphic interface to supervise three values， the number of client who has connected to this IWS, the average time of communication between IWS and client, the sum of the number of requests of all clients.
 
@@ -52,6 +60,9 @@ after some clients connected to server, it will record the infomation of this co
 **second branche "extension_velib":**
 
 There is a main folder Velib, it contains one more folder than branch master, the folder "Eclient", it provide a console for users to subscribe these fonctions of server, it subscribe a fonction which can get all the information of stations of one city, at first, you need to enter a cityname, it will pass a string to server and search in a cache, if there are informations of this city, it will notice client and return the result, if not, it will tell client there are not related information and continue to find until there are informations corredpond, once it finds information, it will return the result to client.
+
+![image](https://github.com/ziqidong/velib/raw/master/Velib/images/eclient2.png)
+![image](https://github.com/ziqidong/velib/raw/master/Velib/images/eclient3.png)
 
 ![image](https://github.com/ziqidong/velib/raw/master/Velib/images/eclient.png)
 
